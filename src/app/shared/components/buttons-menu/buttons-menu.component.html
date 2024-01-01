@@ -1,0 +1,10 @@
+<div class="buttons-container">
+  <button
+    *ngFor="let region of regions"
+    class="btn bg-white border-primary"
+    (click)="sendRegion(region)"
+    [ngClass]="{ 'btn-active': region === selectedRegion }"
+  >
+    {{ region }}
+  </button>
+</div>

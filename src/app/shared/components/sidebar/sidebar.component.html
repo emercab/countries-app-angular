@@ -1,0 +1,40 @@
+<h2>Countries</h2>
+<hr>
+
+<ul class="list-group">
+  <!-- <a routerLink="" (click)="menuOptionSelected('')">
+    <li class="list-group-item" [ngClass]="{ 'active': menuOptionActive('') }">
+      Home Page
+    </li>
+  </a>
+
+  <a routerLink="about" (click)="menuOptionSelected('about')">
+    <li class="list-group-item" [ngClass]="{ 'active': menuOptionActive('about') }">
+      About Page
+    </li>
+  </a>
+
+  <a routerLink="contact" (click)="menuOptionSelected('contact')">
+    <li class="list-group-item" [ngClass]="{ 'active': menuOptionActive('contact') }">
+      Contact Page
+    </li>
+  </a> -->
+
+  <a routerLink="countries/by-capital" (click)="menuOptionSelected('by-capital')">
+    <li class="list-group-item" [ngClass]="{ 'active': menuOptionActive('by-capital') }">
+      By Capital
+    </li>
+  </a>
+
+  <a routerLink="countries/by-country" (click)="menuOptionSelected('by-country')">
+    <li class="list-group-item" [ngClass]="{ 'active': menuOptionActive('by-country') }">
+      By Country
+    </li>
+  </a>
+
+  <a routerLink="countries/by-region" (click)="menuOptionSelected('by-region')">
+    <li class="list-group-item" [ngClass]="{ 'active': menuOptionActive('by-region') }">
+      By Region
+    </li>
+  </a>
+</ul>

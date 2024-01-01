@@ -1,0 +1,31 @@
+@if (loading) {
+  <shared-loading text="Loading..." />
+}
+
+@else {
+<h2>Search by Region</h2>
+<hr>
+
+<div class="row">
+  <div class="col-md-12">
+    <!-- Regions Buttons Menu -->
+    <shared-buttons-menu
+      [regions]="regions"
+      [selectedRegion]="selectedRegion"
+      (onClick)="searchByRegion($event)"
+    />
+
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <hr>
+      <!-- Result Table -->
+      <countries-table
+        [countries]="countries"
+      />
+
+    </div>
+  </div>
+</div>
+}

@@ -1,0 +1,51 @@
+@if (countries.length === 0) {
+  <div class="alert alert-primary text-center text-dark">
+    No countries found.
+  </div>
+}
+@else {
+  <div class="table-responsive">
+    <table class="table table-striped">
+      <thead class="table-dark">
+        <tr>
+          <th scope="col">N</th>
+          <th scope="col">Flag</th>
+          <th scope="col">Country</th>
+          <th scope="col">Capital</th>
+          <th scope="col">Population</th>
+          <th scope="col">Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let country of countries; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>
+            <img
+              [src]="country.flags.png" alt="{{ country.name.common }} flag"
+              class="img-thumbnail"
+              style="width: 50px;"
+            />
+          </td>
+          <td>{{ country.name.common }}</td>
+          <td>
+            @if (country.capital) {
+              {{ country.capital[0] }}
+            }
+            @else {
+              Not available
+            }
+          </td>
+          <td>{{ country.population | number }}</td>
+          <td>
+            <a
+              [routerLink]="['/countries/country', country.cca3]"
+              class="btn btn-primary"
+            >
+              See details
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+}

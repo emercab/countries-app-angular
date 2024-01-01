@@ -1,0 +1,91 @@
+@if (loading) {
+<shared-loading text="Loading Country..." />
+}
+
+@else {
+<div class="row">
+  <div class="col-md-12">
+    <h2 class="mt-sm-4 mt-md-0">{{ country.name.common }}</h2>
+    <hr>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-4">
+    <h3>Flag</h3>
+    <img [src]="country.flags.png" alt="Flag" class="img-fluid img-thumbnail">
+  </div>
+
+  <div class="col-md-8">
+    <h3 class="mt-sm-4 mt-md-0">Information</h3>
+
+    <ul class="list-group">
+      <li class="list-group-item">
+        <strong>Native Name:</strong> {{ nativeName }}
+      </li>
+
+      <li class="list-group-item">
+        <strong>Population:</strong> {{ country.population | number }}
+      </li>
+
+      <li class="list-group-item d-flex flex-wrap" style="column-gap: 16px;">
+        <p class="m-0"><strong>Capital:</strong> {{ country.capital }} </p>
+
+        <p class="m-0"><strong>Code:</strong> {{ country.cca3 }} </p>
+      </li>
+
+      <li class="list-group-item d-flex flex-wrap" style="column-gap: 16px;">
+        <p class="m-0"><strong>Languages:</strong>
+          <span *ngFor="let language of languages; last as isLast">
+            {{ language.split('-')[1] }} ({{ language.split('-')[0] }}){{ isLast ? '.' : ', ' }}
+          </span>
+        </p>
+      </li>
+    </ul>
+  </div>
+
+</div>
+
+<div class="row mt-4">
+  <div class="col-md-12">
+    <h3>Traslations</h3>
+    <hr>
+
+    <div class="d-flex flex-wrap gap-2">
+      <span class="">
+        <span class="badge bg-primary">Eng</span> {{ country.name.official }}
+      </span>
+
+      <span class="">
+        <span class="badge bg-primary">Spa</span> {{ country.translations['spa'].official }}
+      </span>
+
+      <span class="">
+        <span class="badge bg-primary">Fra</span> {{ country.translations['fra'].official }}
+      </span>
+
+      <span class="">
+        <span class="badge bg-primary">Chi</span> {{ country.translations['zho'].official }}
+      </span>
+
+      <span class="">
+        <span class="badge bg-primary">Ara</span> {{ country.translations['ara'].official }}
+      </span>
+
+      <span class="">
+        <span class="badge bg-primary">Rus</span> {{ country.translations['rus'].official }}
+      </span>
+
+      <span class="">
+        <span class="badge bg-primary">Por</span> {{ country.translations['por'].official }}
+      </span>
+
+      <span class="">
+        <span class="badge bg-primary">Ger</span> {{ country.translations['deu'].official }}
+      </span>
+
+    </div>
+
+  </div>
+</div>
+}

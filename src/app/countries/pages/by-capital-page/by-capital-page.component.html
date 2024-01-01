@@ -1,0 +1,30 @@
+@if (loading) {
+<shared-loading text="Loading..."/>
+}
+
+@else {
+<h2>Search Country by Capital</h2>
+<hr>
+
+<div class="row">
+  <div class="col-md-12 col-lg-6">
+    <!-- Search Box -->
+    <shared-search-box
+      [placeholder]="'Search by Capital'"
+      [value]="initialValue"
+      (onEnter)="searchByCapital($event)"
+      (onDebounce)="searchByCapital($event)"
+    />
+
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <hr>
+      <!-- Result Table -->
+      <countries-table [countries]="countries" />
+
+    </div>
+  </div>
+</div>
+}

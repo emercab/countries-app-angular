@@ -1,0 +1,7 @@
+<input
+  type="text" class="form-control border-primary" #txtSearchBox
+  [placeholder]="placeholder"
+  [value]="value"
+  (keyup.enter)="sendTerm(txtSearchBox.value)"
+  (keyup)="onKeyPress(txtSearchBox.value)"
+/>
